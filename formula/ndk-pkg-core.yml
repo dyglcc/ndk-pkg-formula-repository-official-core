@@ -1,5 +1,5 @@
 summary: core utils for ndk-pkg
-git-url: https://github.com/leleliu008/ndk-pkg
+git-url: https://github.com/dyglcc/ndk-pkg
 license: Apache-2.0
 binbstd: 1
 install: |

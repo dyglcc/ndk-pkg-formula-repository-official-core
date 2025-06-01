@@ -1,5 +1,5 @@
 summary: A portable package manager for Unix-like systems
-git-url: https://github.com/leleliu008/ppkg
+git-url: https://github.com/dyglcc/ppkg
 git-ref: refs/heads/c
 license: Apache-2.0
 dep-pkg: libcurl libgit2 libarchive libyaml libjansson

@@ -1,5 +1,5 @@
 summary: Universal Prebuild Package Manager
-git-url: https://github.com/leleliu008/uppm
+git-url: https://github.com/dyglcc/uppm
 git-ref: refs/heads/0.15.3
     #src-url: dir:///Users/fpliu/uppm
 license: Apache-2.0

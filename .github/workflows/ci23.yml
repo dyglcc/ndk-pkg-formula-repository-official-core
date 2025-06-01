@@ -31,13 +31,13 @@ jobs:
       - run: apt -y update
       - run: apt -y install curl
 
-      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: curl -LO https://raw.githubusercontent.com/dyglcc/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/dyglcc/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
@@ -61,13 +61,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: wget https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: wget https://raw.githubusercontent.com/dyglcc/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/dyglcc/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
 
@@ -93,7 +93,7 @@ jobs:
       - run: tar xf alpine-minirootfs-3.20.3-x86_64.tar.gz -C alpine-rootfs
       - run: cp -p /etc/resolv.conf alpine-rootfs/etc/
 
-      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: curl -LO https://raw.githubusercontent.com/dyglcc/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod +x ndk-pkg
 
       - run: mv ndk-pkg         alpine-rootfs/
@@ -103,7 +103,7 @@ jobs:
       - run: mv formula alpine-rootfs/root/.ndk-pkg/repos.d/official-core/
       - run: |
             cat >       alpine-rootfs/root/.ndk-pkg/repos.d/official-core/.ndk-pkg-formula-repo.yml <<EOF
-            url: https://github.com/leleliu008/ndk-pkg-formula-repository-official-core
+            url: https://github.com/dyglcc/ndk-pkg-formula-repository-official-core
             branch: master
             pinned: 0
             enabled: 1
@@ -139,12 +139,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - run: curl -LO https://raw.githubusercontent.com/leleliu008/ndk-pkg/${{ github.ref_name }}/ndk-pkg
+      - run: curl -LO https://raw.githubusercontent.com/dyglcc/ndk-pkg/${{ github.ref_name }}/ndk-pkg
       - run: chmod u+x ndk-pkg
 
       - run: ./ndk-pkg about
       - run: ./ndk-pkg setup
       - run: ./ndk-pkg sysinfo
-      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/leleliu008/ndk-pkg-formula-repository-my_repo
+      - run: ./ndk-pkg formula-repo-add my_repo https://github.com/dyglcc/ndk-pkg-formula-repository-my_repo
       - run: mv formula ~/.ndk-pkg/repos.d/my_repo/
       - run: ./ndk-pkg-install ${{ matrix.pkg }} ${{ matrix.abi }} ${{ matrix.opt }}
